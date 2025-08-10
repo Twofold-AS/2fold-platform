@@ -1,0 +1,15 @@
+# dependencies
+node_modules
+pnpm-lock.yaml
+
+# builds
+.next
+out
+dist
+
+# misc
+.env
+.env.*
+.DS_Store
+.vscode
+coverage

@@ -1,0 +1,20 @@
+{
+  "name": "twofold-platform",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "dev": "turbo dev --parallel",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "release": "changeset version && pnpm install --no-frozen-lockfile && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.5",
+    "eslint": "^9.7.0",
+    "prettier": "^3.3.3",
+    "turbo": "^2.5.5",
+    "typescript": "^5.5.4",
+    "@types/node": "^22.5.0"
+  }
+}

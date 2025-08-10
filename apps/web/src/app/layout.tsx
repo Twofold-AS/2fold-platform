@@ -7,14 +7,10 @@ export const metadata: Metadata = {
   description: "Oversikt & FAQ",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="no">
-      <body>
+    <html lang="no" suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <Providers>{children}</Providers>
       </body>
     </html>

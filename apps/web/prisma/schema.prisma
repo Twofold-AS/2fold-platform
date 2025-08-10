@@ -1,30 +1,29 @@
-// Update provider/url via .env
 datasource db {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
-
 
 generator client {
   provider = "prisma-client-js"
 }
 
-/* --- NextAuth standardmodeller --- */
+/**
+ * --- NextAuth standardmodeller ---
+ */
 model Account {
   id                String  @id @default(cuid())
   userId            String
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String?   @db.Text
-  access_token      String?   @db.Text
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String?   @db.Text
+  id_token          String? @db.Text
   session_state     String?
-  user              User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
 }
@@ -38,16 +37,16 @@ model Session {
 }
 
 model User {
-  id            String   @id @default(cuid())
+  id            String    @id @default(cuid())
   name          String?
-  email         String?  @unique
+  email         String?   @unique
   emailVerified DateTime?
   image         String?
   accounts      Account[]
   sessions      Session[]
   role          Role      @default(VIEWER)
   organizations UserOrg[]
-  projects      Project[]
+  projects      Project[] @relation("UserProjects")
   createdAt     DateTime  @default(now())
 }
 
@@ -59,35 +58,44 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
-/* --- Dine domenemodeller --- */
+/**
+ * --- Domenemodeller ---
+ */
 model Organization {
-  id        String   @id @default(cuid())
+  id        String    @id @default(cuid())
   name      String
   users     UserOrg[]
   projects  Project[]
-  createdAt DateTime @default(now())
+  createdAt DateTime  @default(now())
 }
 
 model UserOrg {
   userId String
   orgId  String
-  role   Role    @default(VIEWER)
+  role   Role   @default(VIEWER)
 
-  user   User          @relation(fields: [userId], references: [id], onDelete: Cascade)
-  org    Organization  @relation(fields: [orgId], references: [id], onDelete: Cascade)
+  user User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  org  Organization @relation(fields: [orgId], references: [id], onDelete: Cascade)
 
   @@id([userId, orgId])
 }
 
 model Project {
-  id            String   @id @default(cuid())
-  orgId         String
-  name          String
-  repoUrl       String
-  vercelProjId  String?
-  createdAt     DateTime @default(now())
+  id           String   @id @default(cuid())
+  orgId        String
+  name         String
+  repoUrl      String
+  vercelProjId String?
+  createdAt    DateTime @default(now())
 
-  organization  Organization @relation(fields: [orgId], references: [id], onDelete: Cascade)
+  // Relasjoner
+  organization Organization @relation(fields: [orgId], references: [id], onDelete: Cascade)
+
+  // Backref til User.projects
+  ownerId String?
+  owner   User?   @relation("UserProjects", fields: [ownerId], references: [id], onDelete: SetNull)
+
+  @@index([ownerId])
 }
 
 model AuditEvent {
@@ -105,5 +113,3 @@ enum Role {
   MAINTAINER
   VIEWER
 }
-
-

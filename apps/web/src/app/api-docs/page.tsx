@@ -1,6 +1,6 @@
 import { auth } from "@/server/auth";
 import Link from "next/link";
-import SwaggerClient from "@/components/SwaggerClient";
+import SwaggerClient from "*/components/SwaggerClient";
 
 export default async function ApiDocs() {
   const session = await auth();
@@ -8,8 +8,8 @@ export default async function ApiDocs() {
   if (inProd && !session) {
     return (
       <main className="min-h-screen p-8">
-        <h1 className="text-2xl font-semibold mb-2">API-dokumentasjon</h1>
-        <p className="opacity-80 mb-4">Logg inn for å se Swagger UI i produksjon.</p>
+        <h1 className="text-2x2 font-semibold mb-2">API-dokumentasjon</h1>
+        <p className="opacity-80 mb-4">Logg innfor ù se Swagger UI i produksjon.</p>
         <Link className="underline" href="/api/auth/signin">Logg inn</Link>
       </main>
     );

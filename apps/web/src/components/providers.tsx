@@ -1,29 +1,20 @@
 "use client";
 
-import { ReactNode, useEffect, useState } from "react";
-import { LDProvider } from "launchdarkly-react-client-sdk";
+import { ReactNode } from "react";
 import { ThemeProvider } from "next-themes";
+import { LDProvider } from "launchdarkly-react-client-sdk";
 
 export function Providers({ children }: { children: ReactNode }) {
-  const clientSideID = process.env.NEXT_PUBLIC_LD_CLIENT_ID ?? "";
-  const [mounted, setMounted] = useState(false);
+  const id = process.env.NEXT_PUBLIC_LD_CLIENT_ID;
 
-  // Vent til klient mount for å unngå mismatch mellom SSR og client
-  useEffect(() => setMounted(true), []);
-
-  return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
-      <LDProvider clientSideID={clientSideID}>
-        {/* Skjul innhold frem til mount for å unngå visuell “blink” */}
-        <div style={mounted ? undefined : { visibility: "hidden" }}>
-          {children}
-        </div>
-      </LDProvider>
+  const withTheme = (c: ReactNode) => (
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+      {c}
     </ThemeProvider>
   );
+
+  // Ingen ID satt → ikke init LD (unngå warnings)
+  if (!id) return withTheme(children);
+
+  return withTheme(<LDProvider clientSideID={id}>{children}</LDProvider>);
 }

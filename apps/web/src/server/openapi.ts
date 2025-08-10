@@ -7,7 +7,20 @@ export function getOpenApiSpec(baseUrl: string) {
       "/api/health": {
         get: {
           summary: "Health check",
-          responses: { "200": { description: "OK" } }
+          responses: {
+            "200": {
+              description: "OK",
+              content: {
+                "application/json": {
+                  schema: {
+                    type: "object",
+                    properties: { ok: { type: "boolean" }, ts: { type: "number" } },
+                    required: ["ok", "ts"]
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

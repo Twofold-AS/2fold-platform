@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -10,8 +11,8 @@ export default function Marketing() {
         Her kan kundene få oversikt, lese dokumentasjon og status. Utviklere kan logge inn for å se dashboardet.
       </p>
       <div className="flex gap-3">
-        <a className="px-4 py-2 rounded-xl border" href="/faq">Se FAQ</a>
-        <a className="px-4 py-2 rounded-xl border" href="/api-docs">API-dokumentasjon→</a>
+        <Link className="px-4 py-2 rounded-xl border" href="/faq">Se FAQ</Link>
+        <Link className="px-4 py-2 rounded-xl border" href="/api-docs">API-dokumentasjon→</Link>
         <Link href="/dashboard" className="px-4 py-2 rounded-xl bg-black text-white">Logg inn</Link>
       </div>
     </main>

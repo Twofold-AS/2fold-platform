@@ -1,7 +1,10 @@
 {
-  "name": "web",
-  "version": "0.1.0",
+  "name": "twofold-platform",
   "private": true,
+  "packageManager": "pnpm@9.12.0",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -40,8 +43,5 @@
     "tailwindcss": "^4.1.11",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5"
-  },
-  "engines": {
-    "node": "20.x"
   }
 }

@@ -9,15 +9,14 @@
     "dev": "turbo dev --parallel",
     "build": "turbo build",
     "lint": "turbo lint",
-    "test": "turbo test",
-    "release": "changeset version && pnpm install --no-frozen-lockfile && changeset publish"
+    "test": "turbo test"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.5",
-    "eslint": "^9.7.0",
-    "prettier": "^3.3.3",
+    "@changesets/cli": "^2.29.5",
+    "eslint": "^9.33.0",
+    "prettier": "^3.6.2",
     "turbo": "^2.5.5",
-    "typescript": "^5.5.4",
-    "@types/node": "^22.5.0"
+    "typescript": "^5.9.2",
+    "@types/node": "^22.17.1"
   }
 }

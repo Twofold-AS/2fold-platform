@@ -15,7 +15,6 @@ function verify(sigHeader: string | null, payload: string) {
   const digest = `sha256=${hmac.update(payload).digest("hex")}`;
   if (!sigHeader) return false;
   try {
-    // Samme lengde før timingSafeEqual
     if (sigHeader.length !== digest.length) return false;
     return timingSafeEqual(Buffer.from(sigHeader), Buffer.from(digest));
   } catch {
@@ -23,24 +22,39 @@ function verify(sigHeader: string | null, payload: string) {
   }
 }
 
+type UpgradePayload = {
+  owner: string;
+  repo: string;
+  deps: Record<string, string>;
+  title?: string;
+  body?: string;
+};
+
 export async function POST(req: Request) {
   const raw = await req.text();
   const sig = req.headers.get("x-hub-signature-256");
   if (!verify(sig, raw)) return new Response("Invalid signature", { status: 401 });
 
   const event = req.headers.get("x-github-event") || "unknown";
-  const payload = JSON.parse(raw);
+  const payload = JSON.parse(raw) as { action?: string; client_payload?: Partial<UpgradePayload> };
 
   if (event === "repository_dispatch" && payload.action === "twofold-upgrade") {
-    const { owner, repo, deps, title, body } = payload.client_payload || {};
+    const { owner, repo, deps, title, body } = payload.client_payload ?? {};
     if (owner && repo && deps && typeof deps === "object") {
       const base = await getDefaultBranch(owner, repo);
       const pkg = await readTextFile({ owner, repo, path: "package.json", ref: `heads/${base}` });
       const updated = bumpDeps(JSON.parse(pkg), deps);
-      const t = title ?? `Twofold upgrade: ${Object.entries(deps).map(([k, v]: any) => `${k}@${v}`).join(", ")}`;
+      const t =
+        title ??
+        `Twofold upgrade: ${Object.entries(deps as Record<string, string>)
+          .map(([k, v]) => `${k}@${v}`)
+          .join(", ")}`;
       const url = await openUpgradePR({
-        owner, repo, title: t, body,
-        files: [{ path: "package.json", content: updated, message: t }]
+        owner,
+        repo,
+        title: t,
+        body,
+        files: [{ path: "package.json", content: updated, message: t }],
       });
       return Response.json({ ok: true, pr: url });
     }

@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="min-h-screen flex flex-col">
             <header className="h-14 border-b">
               <div className="mx-auto max-w-6xl h-full px-4 flex items-center justify-between">
-                <a href="/" className="font-semibold">Twofold</a>
+                <Link href="/" className="font-semibold">Twofold</Link>
                 <ThemeToggle />
               </div>
             </header>

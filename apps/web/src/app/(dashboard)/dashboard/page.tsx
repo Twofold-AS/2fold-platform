@@ -1,9 +1,6 @@
 import { auth } from "@/server/auth";
 import Link from "next/link";
-import dynamic from "next/dynamic";
-
-// Laster klient-komponenten kun i browser (ReactFlow trenger window)
-const PlatformGraph = dynamic(() => import("@/components/PlatformGraph"), { ssr: false });
+import PlatformGraphClient from "@/components/PlatformGraph.client";
 
 export default async function DashboardPage() {
   const session = await auth();
@@ -26,7 +23,7 @@ export default async function DashboardPage() {
 
       <section>
         <h2 className="text-xl font-medium mb-2">Plattformstatus</h2>
-        <PlatformGraph />
+        <PlatformGraphClient />
       </section>
     </main>
   );

@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 
-// Liten utils for å slå sammen klasser
+// enkel className util
 function cn(...args: Array<string | false | null | undefined>) {
   return args.filter(Boolean).join(" ");
 }
@@ -42,7 +42,7 @@ const sizes: Record<Size, string> = {
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, asChild, variant = "default", size = "default", ...props }, ref) => {
-    const Comp: any = asChild ? Slot : "button";
+    const Comp = (asChild ? Slot : "button") as React.ElementType;
     return (
       <Comp
         ref={ref}

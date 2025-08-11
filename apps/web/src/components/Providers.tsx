@@ -1,6 +1,12 @@
-'use client';
-import type { ReactNode } from 'react';
-export default function Providers({ children }: { children: ReactNode }) {
-  // Legg evt. SessionProvider, ThemeProvider, QueryClientProvider her senere
-  return <>{children}</>;
+"use client";
+import { ThemeProvider } from "next-themes";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
+export default function Providers({ children }: { children: React.ReactNode }) {
+  return (
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+      {children}
+      <SpeedInsights />
+    </ThemeProvider>
+  );
 }

@@ -7,7 +7,7 @@ export default async function DashboardPage() {
     <div className="grid gap-6">
       <header className="grid gap-1">
         <h1 className="text-3xl font-semibold">Dashboard</h1>
-        <p className="opacity-70">Hei, {session?.user?.name ?? "bruker"} Ì±ã</p>
+        <p className="opacity-70">Hei, {session?.user?.name ?? "bruker"}</p>
       </header>
 
       <div className="grid sm:grid-cols-3 gap-4">
@@ -17,14 +17,14 @@ export default async function DashboardPage() {
             <CardDescription>Alt ser normalt ut.</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-sm opacity-80">Sist oppdatert: n√• nettopp.</p>
+            <p className="text-sm opacity-80">Sist oppdatert: nylig.</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
             <CardTitle>Prosjekter</CardTitle>
-            <CardDescription>0 aktive / 0 i k√∏</CardDescription>
+            <CardDescription>0 aktive / 0 i koe</CardDescription>
           </CardHeader>
           <CardContent />
         </Card>

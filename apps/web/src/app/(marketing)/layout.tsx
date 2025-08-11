@@ -1,11 +1,13 @@
-import type { Metadata } from "next";
 import type { ReactNode } from "react";
-
-export const metadata: Metadata = {
-  title: "Twofold Platform",
-  description: "Oversikt, dokumentasjon og FAQ for Twofold-plattformen."
-};
+import Header from "@/components/site/Header";
+import Footer from "@/components/site/Footer";
 
 export default function MarketingLayout({ children }: { children: ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <Header />
+      <main className="mx-auto max-w-6xl px-4 py-14">{children}</main>
+      <Footer />
+    </>
+  );
 }

@@ -1,21 +1,37 @@
-"use client";
-import { useEffect, useState } from "react";
-import { useTheme } from "next-themes";
+'use client';
+import { useEffect, useState } from 'react';
 
 export default function ThemeToggle() {
-  const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const root = document.documentElement;
+    const initial =
+      localStorage.getItem('theme') ??
+      (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (initial === 'dark') root.classList.add('dark');
+    setIsDark(root.classList.contains('dark'));
+  }, []);
+
   if (!mounted) return null;
-  const isDark = (resolvedTheme ?? theme) === "dark";
+
+  function toggle() {
+    const root = document.documentElement;
+    const next = root.classList.toggle('dark');
+    localStorage.setItem('theme', next ? 'dark' : 'light');
+    setIsDark(next);
+  }
+
   return (
     <button
       type="button"
-      onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="rounded-full border px-3 py-1 text-sm hover:bg-muted"
+      onClick={toggle}
+      className="inline-flex items-center rounded-xl border px-3 py-1 text-sm hover:bg-muted"
       aria-label="Toggle theme"
     >
-      {isDark ? "☾ Mørk" : "☀︎ Lys"}
+      {isDark ? '☀️ Light' : '��� Dark'}
     </button>
   );
 }

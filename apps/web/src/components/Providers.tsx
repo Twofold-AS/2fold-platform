@@ -1,7 +1,6 @@
 'use client';
 import type { ReactNode } from 'react';
-
 export default function Providers({ children }: { children: ReactNode }) {
-  // Legg evt. SessionProvider, ThemeProvider, QueryClientProvider her
+  // Legg evt. SessionProvider, ThemeProvider, QueryClientProvider her senere
   return <>{children}</>;
 }

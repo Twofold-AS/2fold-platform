@@ -38,7 +38,7 @@ export default function PlatformGraph({ status }: { status: PlatformStatus }) {
 
   return (
     <div style={{ width: "100%", height: 420 }} className="rounded-2xl border">
-      <ReactFlow<NodeData> nodes={nodes} edges={edges} fitView>
+      <ReactFlow  nodes={nodes} edges={edges} fitView>
         <Background />
         <Controls />
       </ReactFlow>

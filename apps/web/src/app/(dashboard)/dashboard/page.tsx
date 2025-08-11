@@ -7,7 +7,7 @@ type PlatformStatus = unknown;
 
 async function fetchStatus(): Promise<PlatformStatus | null> {
   try {
-    const h = headers();
+    const h = await headers();
     const proto = h.get("x-forwarded-proto") ?? "https";
     const host =
       h.get("host") ??

@@ -5,7 +5,7 @@ type Endpoint = { path: string; ok: boolean };
 type PlatformStatus = { db: boolean; env: Record<string, boolean>; endpoints: Endpoint[] };
 
 async function fetchStatus(): Promise<PlatformStatus | null> {
-  const h = headers();
+  const h = await headers();
   const proto = h.get("x-forwarded-proto") ?? "http";
   const host  = h.get("x-forwarded-host") ?? h.get("host") ?? "localhost:3000";
   const res = await fetch(`${proto}://${host}/api/status`, { cache: "no-store" });

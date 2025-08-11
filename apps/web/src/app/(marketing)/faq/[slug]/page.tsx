@@ -9,9 +9,7 @@ const CONTENT: Record<string, { title: string; body: JSX.Element }> = {
         <p className="leading-7">
           Dette er Twofold sin FAQ. Her finner du korte svar på vanlige spørsmål.
         </p>
-        <p className="leading-7">
-          Mangler du noe? Ta kontakt, så fyller vi på.
-        </p>
+        <p className="leading-7">Mangler du noe? Ta kontakt, så fyller vi på.</p>
       </>
     ),
   },
@@ -20,16 +18,20 @@ const CONTENT: Record<string, { title: string; body: JSX.Element }> = {
     body: (
       <>
         <p className="leading-7">
-          Vi deployer frontend til Vercel. Miljøvariabler styres i Vercel
-          Dashboard. API-er eksponeres via /api-ruter i Next.
+          Vi deployer frontend til Vercel. Miljøvariabler styres i Vercel Dashboard.
         </p>
       </>
     ),
   },
 };
 
-export default function FAQSlug({ params }: { params: { slug: string } }) {
-  const entry = CONTENT[params.slug];
+export default async function FAQSlug({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const entry = CONTENT[slug];
   if (!entry) return notFound();
 
   return (

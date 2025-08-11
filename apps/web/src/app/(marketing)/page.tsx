@@ -10,6 +10,9 @@ export default function MarketingPage() {
         <Link className="underline" href="/faq">FAQ</Link>
         <Link className="underline" href="/dashboard">Dashboard</Link>
       </div>
+          <div className="mt-6">
+        <Link className="underline" href="/docs">Docs</Link>
+      </div>
     </main>
   );
 }

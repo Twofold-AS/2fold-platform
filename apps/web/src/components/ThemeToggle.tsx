@@ -17,12 +17,12 @@ export default function ThemeToggle() {
 
   if (!mounted) return null;
 
-  function toggle() {
+  const toggle = () => {
     const root = document.documentElement;
     const next = root.classList.toggle('dark');
     localStorage.setItem('theme', next ? 'dark' : 'light');
     setIsDark(next);
-  }
+  };
 
   return (
     <button
@@ -30,8 +30,9 @@ export default function ThemeToggle() {
       onClick={toggle}
       className="inline-flex items-center rounded-xl border px-3 py-1 text-sm hover:bg-muted"
       aria-label="Toggle theme"
+      data-testid="theme-toggle"
     >
-      {isDark ? '‚òÄÔ∏è Light' : 'Ìºô Dark'}
+      {isDark ? 'Light' : 'Dark'}
     </button>
   );
 }

@@ -1,5 +1,8 @@
 import { auth } from "@/server/auth";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import dynamic from "next/dynamic";
+
+const PlatformGraph = dynamic(() => import("@/components/graph/PlatformGraph"), { ssr: false });
 
 export default async function DashboardPage() {
   const session = await auth();
@@ -17,14 +20,14 @@ export default async function DashboardPage() {
             <CardDescription>Alt ser normalt ut.</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-sm opacity-80">Sist oppdatert: nylig.</p>
+            <p className="text-sm opacity-80">Sist oppdatert: nå nettopp.</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
             <CardTitle>Prosjekter</CardTitle>
-            <CardDescription>0 aktive / 0 i koe</CardDescription>
+            <CardDescription>0 aktive / 0 i kø</CardDescription>
           </CardHeader>
           <CardContent />
         </Card>
@@ -37,6 +40,11 @@ export default async function DashboardPage() {
           <CardContent />
         </Card>
       </div>
+
+      <section className="mt-2">
+        <h2 className="text-xl font-medium mb-2">Plattform-oversikt</h2>
+        <PlatformGraph />
+      </section>
     </div>
   );
 }

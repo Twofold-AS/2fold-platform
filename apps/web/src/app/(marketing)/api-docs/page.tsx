@@ -1,10 +1,8 @@
 import { auth } from "@/server/auth";
 import Link from "next/link";
-import NextDynamic from "next/dynamic";
+import SwaggerClient from "@/components/SwaggerClient";
 
 export const dynamic = "force-dynamic";
-
-const SwaggerClient = NextDynamic(() => import("@/components/SwaggerClient"), { ssr: false });
 
 export default async function ApiDocsPage() {
   const session = await auth();

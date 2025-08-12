@@ -1,13 +1,29 @@
-import AuthButtons from "@/components/auth/AuthButtons.client";
+/* eslint-disable @next/next/no-html-link-for-pages */
+import { auth } from "@/server/auth";
+import Link from "next/link";
 
-export default function SignInPage() {
+export const dynamic = "force-dynamic";
+
+export default async function SignInPage() {
+  const session = await auth();
+
+  if (session) {
+    return (
+      <main className="container mx-auto p-8">
+        <h1 className="text-2xl font-semibold mb-4">Du er allerede innlogget</h1>
+        <div className="flex gap-4">
+          <Link className="underline" href="/dashboard">Gå til dashboard</Link>
+          <a className="underline" href="/api/auth/signout">Logg ut</a>
+        </div>
+      </main>
+    );
+  }
+
   return (
-    <main className="min-h-[60vh] flex items-center justify-center p-8">
-      <div className="w-full max-w-sm border rounded-2xl p-6 space-y-4">
-        <h1 className="text-2xl font-semibold">Logg inn</h1>
-        <p className="text-sm opacity-70">Bruk GitHub for å logge inn.</p>
-        <AuthButtons />
-      </div>
+    <main className="container mx-auto p-8">
+      <h1 className="text-3xl font-semibold mb-4">Logg inn</h1>
+      <p className="opacity-80 mb-6">Bruk GitHub-konto (kun organisasjonen er tillatt).</p>
+      <a className="inline-block underline" href="/api/auth/signin">Fortsett med GitHub</a>
     </main>
   );
 }

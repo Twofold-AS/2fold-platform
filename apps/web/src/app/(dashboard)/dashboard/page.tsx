@@ -1,5 +1,5 @@
 import { auth } from '@/server/auth';
-import PlatformGraph from '@/components/graph/PlatformGraphShell';
+import PlatformGraph from '@/components/features/platform-graph/PlatformGraphShell';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 export default async function DashboardPage() {
   const session = await auth();

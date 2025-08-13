@@ -1,4 +1,4 @@
-import PlatformGraph from "@/components/PlatformGraph";
+import PlatformGraph from "@/components/features/platform-graph/PlatformGraph";
 import { headers } from "next/headers";
 
 type Endpoint = { path: string; ok: boolean };

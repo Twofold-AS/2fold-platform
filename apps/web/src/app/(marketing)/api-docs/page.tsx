@@ -1,6 +1,6 @@
 import { auth } from '@/server/auth';
 import Link from 'next/link';
-import SwaggerClient from '@/components/SwaggerClient';
+import SwaggerClient from '@/components/api/SwaggerUI';
 
 export const dynamic = 'force-dynamic';
 

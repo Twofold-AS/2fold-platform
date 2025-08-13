@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Providers from '@/components/Providers';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
+import Header from '@/components/site/Header';
+import Footer from '@/components/site/Footer';
 
 export const metadata: Metadata = {
   title: 'Twofold',

@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "tailwindcss-animate";
+
+/* Base */
+html, body { height: 100%; }
+body {
+  @apply antialiased bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50;
+}
+
+/* Små justeringer for typografi */
+.prose { @apply max-w-none; }
+.prose :where(h1,h2,h3, h4){ @apply scroll-m-20; }
+a { @apply underline-offset-4; }

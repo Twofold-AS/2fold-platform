@@ -5,20 +5,20 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
-  title: 'Twofold - Skreddersydde AI-løsninger',
-  description: 'Vi bygger webapper, mobile apps og programvare drevet av kunstig intelligens',
+ title: 'Twofold',
+ description: 'Twofold platform',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="no" suppressHydrationWarning>
-      <body className="min-h-screen bg-twofold-dark text-twofold-cream antialiased overflow-x-hidden" style={{ cursor: 'none' }}>
-        <Providers>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </Providers>
-      </body>
-    </html>
-  );
+ return (
+   <html lang="no" suppressHydrationWarning>
+     <body className="min-h-screen bg-white text-black dark:bg-neutral-950 dark:text-white antialiased">
+       <Providers>
+         <Header />
+         <main className="container mx-auto px-4 py-8">{children}</main>
+         <Footer />
+       </Providers>
+     </body>
+   </html>
+ );
 }

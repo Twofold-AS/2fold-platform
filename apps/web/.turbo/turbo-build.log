@@ -1,0 +1,29 @@
+ WARN  Unsupported engine: wanted: {"node":"20.x"} (current: {"node":"v22.18.0","pnpm":"9.12.0"})
+
+> web@ build C:\Users\Kjartan\Desktop\Twofold\Development\2fold-platform\apps\web
+> next build
+
+   ▲ Next.js 15.4.6
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 4.0s
+   Linting and checking validity of types ...
+
+./src/app/(dashboard)/platform/page.tsx
+1:10  Warning: 'headers' is defined but never used.  @typescript-eslint/no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+Error: @prisma/client did not initialize yet. Please run "prisma generate" and try to import it again.
+    at 86116 (C:\Users\Kjartan\Desktop\Twofold\Development\2fold-platform\apps\web\.next\server\app\api\status\route.js:1:7747)
+    at c (C:\Users\Kjartan\Desktop\Twofold\Development\2fold-platform\apps\web\.next\server\webpack-runtime.js:1:128)
+    at 57375 (C:\Users\Kjartan\Desktop\Twofold\Development\2fold-platform\apps\web\.next\server\app\api\status\route.js:1:1587)
+    at c (C:\Users\Kjartan\Desktop\Twofold\Development\2fold-platform\apps\web\.next\server\webpack-runtime.js:1:128)
+    at <unknown> (C:\Users\Kjartan\Desktop\Twofold\Development\2fold-platform\apps\web\.next\server\app\api\status\route.js:1:7995)
+    at c.X (C:\Users\Kjartan\Desktop\Twofold\Development\2fold-platform\apps\web\.next\server\webpack-runtime.js:1:1206)
+    at <unknown> (C:\Users\Kjartan\Desktop\Twofold\Development\2fold-platform\apps\web\.next\server\app\api\status\route.js:1:7981)
+    at Object.<anonymous> (C:\Users\Kjartan\Desktop\Twofold\Development\2fold-platform\apps\web\.next\server\app\api\status\route.js:1:8027)
+
+> Build error occurred
+[Error: Failed to collect page data for /api/status] { type: 'Error' }
+ ELIFECYCLE  Command failed with exit code 1.

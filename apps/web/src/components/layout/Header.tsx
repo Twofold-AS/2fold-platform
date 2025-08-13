@@ -18,7 +18,9 @@ export default async function Header() {
         <div className="flex items-center gap-3">
           <ThemeToggle />
           {session ? (
-            <a href="/api/auth/signout" className="text-sm underline">Logg ut</a>
+            <form action="/api/auth/signout" method="post" className="inline">
+              <button type="submit" className="text-sm underline">Logg ut</button>
+            </form>
           ) : (
             <Link href="/auth/signin" className="text-sm underline">Logg inn</Link>
           )}

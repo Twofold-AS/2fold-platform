@@ -2,7 +2,6 @@
 import React from 'react';
 import ReactFlow, { Background, Controls, MiniMap, addEdge, Connection, Edge, Node } from 'reactflow';
 import 'reactflow/dist/style.css';
-
 export default function GraphCanvas() {
   const [nodes] = React.useState<Node[]>([
     { id: 'app', position: { x: 50, y: 80 }, data: { label: 'App (Next.js)' } },

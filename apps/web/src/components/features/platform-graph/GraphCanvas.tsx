@@ -1,3 +1,4 @@
+// Fixed UTF-8 encoding
 'use client';
 import React from 'react';
 

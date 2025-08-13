@@ -35,9 +35,6 @@ export default function Header() {
             <Link href="#cases" className="text-twofold-accent hover:text-twofold-cream transition-colors nav-link">
               Cases
             </Link>
-            <Link href="/api-docs" className="text-twofold-accent hover:text-twofold-cream transition-colors nav-link">
-              API
-            </Link>
             <Link 
               href="#kontakt" 
               className="bg-twofold-cream text-twofold-dark px-6 py-2 rounded-full transition-all hover:scale-105 hover:shadow-lg hover:shadow-twofold-cream/20 nav-cta font-semibold"

@@ -5,17 +5,17 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
-  title: 'Twofold',
-  description: 'Twofold platform',
+  title: 'Twofold - Skreddersydde AI-løsninger',
+  description: 'Vi bygger webapper, mobile apps og programvare drevet av kunstig intelligens',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="no" suppressHydrationWarning>
-      <body className="min-h-screen bg-white text-black dark:bg-neutral-950 dark:text-white antialiased">
+      <body className="min-h-screen bg-twofold-dark text-twofold-cream antialiased overflow-x-hidden" style={{ cursor: 'none' }}>
         <Providers>
           <Header />
-          <main className="container mx-auto px-4 py-8">{children}</main>
+          <main>{children}</main>
           <Footer />
         </Providers>
       </body>

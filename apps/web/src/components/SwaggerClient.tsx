@@ -1,13 +1,11 @@
 'use client';
-
-import SwaggerUI from "swagger-ui-react";
-import "swagger-ui-react/swagger-ui.css";
-
 export default function SwaggerClient() {
-  const url = process.env.NEXT_PUBLIC_SWAGGER_URL || "/api/openapi.json";
+  const url = '/api/openapi.json';
   return (
-    <div className="border rounded-lg overflow-hidden">
-      <SwaggerUI url={url} />
-    </div>
+    <iframe
+      src={`https://petstore.swagger.io/?url=${encodeURIComponent(url)}`}
+      className="w-full h-[70vh] border rounded-md bg-white"
+      title="Swagger UI"
+    />
   );
 }

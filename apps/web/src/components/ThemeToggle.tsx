@@ -1,17 +1,18 @@
-"use client";
-import { useTheme } from "next-themes";
-import { Sun, Moon } from "lucide-react";
-import { Button } from "@/components/ui/button";
-
+'use client';
+import { useTheme } from 'next-themes';
+import { Moon, Sun } from 'lucide-react';
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
-  const isDark = theme === "dark";
+  const isDark = theme === 'dark';
   return (
-    <Button variant="outline" size="sm" aria-label="Toggle theme"
-      onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="gap-2">
-      {isDark ? <Sun size={16} /> : <Moon size={16} />}
-      <span className="hidden sm:inline">{isDark ? "Light" : "Dark"}</span>
-    </Button>
+    <button
+      type="button"
+      onClick={() => setTheme(isDark ? 'light' : 'dark')}
+      className="inline-flex items-center gap-2 text-sm px-3 py-1 border rounded-md"
+      aria-label="Toggle dark mode"
+    >
+      {isDark ? <Sun size={14} /> : <Moon size={14} />}
+      {isDark ? 'Light' : 'Dark'}
+    </button>
   );
 }

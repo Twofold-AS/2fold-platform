@@ -1,10 +1,9 @@
-"use client";
-import { signIn, signOut, useSession } from "next-auth/react";
+import Link from "next/link";
+import { auth } from "@/server/auth";
 import { Button } from "@/components/ui/button";
 
-export default function AuthButtons() {
-  const { data: session, status } = useSession();
-  if (status === "loading") return null;
+export default async function AuthButtons() {
+  const session = await auth(); // server-only
 
   if (session) {
     return (
@@ -12,16 +11,16 @@ export default function AuthButtons() {
         <span className="hidden sm:inline text-sm opacity-70">
           {session.user?.name ?? "Innlogget"}
         </span>
-        <Button variant="outline" onClick={() => signOut({ callbackUrl: "/" })}>
-          Logg ut
-        </Button>
+        <form action="/api/auth/signout" method="post">
+          <Button variant="outline">Logg ut</Button>
+        </form>
       </div>
     );
   }
 
   return (
-    <Button onClick={() => signIn("github", { callbackUrl: "/dashboard" })}>
-      Logg inn
+    <Button asChild>
+      <Link href="/auth/signin">Logg inn</Link>
     </Button>
   );
 }

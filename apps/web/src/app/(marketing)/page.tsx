@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import FAQ from "@/components/sections/FAQ";
 
 export default function HomePage() {
   return (
@@ -122,6 +123,9 @@ export default function HomePage() {
           </Card>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQ />
     </div>
   );
 }

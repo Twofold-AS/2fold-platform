@@ -3,15 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import FAQ from "@/components/sections/FAQ";
 import BentoGrid from "@/components/kokonut/sections/bento-grid";
+import AIChat from "@/components/sections/AIChat";
 
 export default function HomePage() {
   return (
     <div className="space-y-8">
       <section className="text-center py-12">
         <h1 className="text-4xl font-bold mb-4">The Fold</h1>
-        <p className="text-lg opacity-80 mb-8">
-          Utviklingsplattform og skreddersydde løsninger
-        </p>
+        <AIChat/>
         <div className="flex gap-4 justify-center">
           <Button asChild>
             <Link href="/dashboard">Gå til Dashboard</Link>

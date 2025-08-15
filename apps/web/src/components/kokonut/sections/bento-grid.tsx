@@ -1,14 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-
-/**
- * @author: @dorian_baffier
- * @description: Bento Grid
- * @version: 1.0.0
- * @date: 2025-06-26
- * @license: MIT
- * @website: https://kokonutui.com
- * @github: https://github.com/kokonut-labs/kokonutui
- */
 
 import Anthropic from "@/components/kokonut/icons/anthropic";
 import AnthropicDark from "@/components/kokonut/icons/anthropic-dark";
@@ -724,7 +715,7 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
 
 export default function BentoGrid() {
     return (
-        <section className="relative py-24 sm:py-32 bg-white dark:bg-black overflow-hidden">
+        <section className="relative py-24 sm:py-32 bg-white dark:bg-background/15 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Bento Grid */}
                 <motion.div

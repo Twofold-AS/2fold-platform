@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { Suspense } from "react"
 import Markdown from "react-markdown"
 import remarkGfm from "remark-gfm"
@@ -117,13 +118,13 @@ const CodeBlock = ({
   )
 }
 
-function childrenTakeAllStringContents(element: unknown): string {
+function childrenTakeAllStringContents(element: any): string {
   if (typeof element === "string") {
     return element
   }
 
-  if (element?.props?.children) {
-    const children = (element as { props?: { children?: unknown } })?.props?.children
+  if (element && typeof element === 'object' && element.props && element.props.children) {
+    const children = element.props.children
 
     if (Array.isArray(children)) {
       return children
@@ -137,7 +138,7 @@ function childrenTakeAllStringContents(element: unknown): string {
   return ""
 }
 
-const COMPONENTS = {
+const COMPONENTS: any = {
   h1: withClass("h1", "text-2xl font-semibold"),
   h2: withClass("h2", "font-semibold text-xl"),
   h3: withClass("h3", "font-semibold text-lg"),
@@ -146,7 +147,7 @@ const COMPONENTS = {
   strong: withClass("strong", "font-semibold"),
   a: withClass("a", "text-primary underline underline-offset-2"),
   blockquote: withClass("blockquote", "border-l-2 border-primary pl-4"),
-  code: ({ children, className, ...rest }: { children: React.ReactNode; className?: string; [key: string]: unknown }) => {
+  code: ({ children, className, ...rest }: any) => {
     const match = /language-(\w+)/.exec(className || "")
     return match ? (
       <CodeBlock className={className} language={match[1]} {...rest}>
@@ -163,7 +164,7 @@ const COMPONENTS = {
       </code>
     )
   },
-  pre: ({ children }: { children: React.ReactNode }) => children,
+  pre: ({ children }: any) => children,
   ol: withClass("ol", "list-decimal space-y-2 pl-6"),
   ul: withClass("ul", "list-disc space-y-2 pl-6"),
   li: withClass("li", "my-1.5"),
@@ -185,7 +186,7 @@ const COMPONENTS = {
 }
 
 function withClass(Tag: keyof JSX.IntrinsicElements, classes: string) {
-  const Component = ({ ...props }: { [key: string]: unknown }) => (
+  const Component = ({ ...props }: any) => (
     <Tag className={classes} {...props} />
   )
   Component.displayName = Tag

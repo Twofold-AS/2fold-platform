@@ -2,32 +2,52 @@
 > web@ build C:\Users\mikae\Documents\GitHub\2fold-platform\apps\web
 > next build
 
-Attention: Next.js now collects completely anonymous telemetry regarding usage.
-This information is used to shape Next.js' roadmap and prioritize features.
-You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
-https://nextjs.org/telemetry
-
    ▲ Next.js 15.4.6
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 12.0s
+ ✓ Compiled successfully in 3.0s
    Linting and checking validity of types ...
 
-./src/components/layout/Header_test.tsx
-6:8  Warning: 'AuthButtons' is defined but never used.  @typescript-eslint/no-unused-vars
+./src/components/kokonut/sections/bento-grid.tsx
+358:9  Warning: Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps').
+579:12  Warning: 'isHovered' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./src/components/ui/chat-message.tsx
+118:6  Warning: 'MessagePart' is defined but never used.  @typescript-eslint/no-unused-vars
 
 info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
-Failed to compile.
+   Collecting page data ...
+   Generating static pages (0/12) ...
+   Generating static pages (3/12) 
+   Generating static pages (6/12) 
+   Generating static pages (9/12) 
+ ✓ Generating static pages (12/12)
+   Finalizing page optimization ...
+   Collecting build traces ...
 
-./src/components/layout/Header_test.tsx:55:39
-Type error: Property 'href' does not exist on type '{ title: string; description: string; items: { title: string; href: string; }[]; }'.
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    48.1 kB         164 kB
+├ ○ /_not-found                            994 B         101 kB
+├ ƒ /api-docs                              166 B         104 kB
+├ ƒ /api/auth/[...nextauth]                154 B         100 kB
+├ ƒ /api/github/webhook                    154 B         100 kB
+├ ƒ /api/health                            154 B         100 kB
+├ ƒ /api/openapi                           154 B         100 kB
+├ ƒ /api/openapi.json                      154 B         100 kB
+├ ƒ /api/status                            154 B         100 kB
+├ ƒ /api/trpc/[trpc]                       154 B         100 kB
+├ ƒ /api/upgrade                           154 B         100 kB
+├ ƒ /auth/signin                           166 B         104 kB
+├ ƒ /dashboard                             154 B         100 kB
+├ ○ /docs                                  166 B         104 kB
+├ ○ /docs/readme                           154 B         100 kB
+└ ƒ /platform                              154 B         100 kB
++ First Load JS shared by all             100 kB
+  ├ chunks/718-804a454cb750526a.js       44.2 kB
+  ├ chunks/e0d0bbef-6a86fc0da747ec17.js  54.1 kB
+  └ other shared chunks (total)          1.94 kB
 
-[0m [90m 53 |[39m                         {navigationItems[33m.[39mmap((item) [33m=>[39m (
- [90m 54 |[39m                             [33m<[39m[33mNavigationMenuItem[39m key[33m=[39m{item[33m.[39mtitle}[33m>[39m
-[31m[1m>[22m[39m[90m 55 |[39m                                 {item[33m.[39mhref [33m?[39m (
- [90m    |[39m                                       [31m[1m^[22m[39m
- [90m 56 |[39m                                     [33m<[39m[33mNavigationMenuLink[39m[33m>[39m
- [90m 57 |[39m                                         [33m<[39m[33mButton[39m variant[33m=[39m[32m"ghost"[39m[33m>[39m{item[33m.[39mtitle}[33m<[39m[33m/[39m[33mButton[39m[33m>[39m
- [90m 58 |[39m                                     [33m<[39m[33m/[39m[33mNavigationMenuLink[39m[33m>[39m[0m
-Next.js build worker exited with code: 1 and signal: null
- ELIFECYCLE  Command failed with exit code 1.
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
 import React, { useMemo, useState } from "react"
@@ -129,7 +130,7 @@ export interface Message {
   createdAt?: Date
   experimental_attachments?: Attachment[]
   toolInvocations?: ToolInvocation[]
-  parts?: MessagePart[]
+  parts?: any[]
 }
 
 export interface ChatMessageProps extends Message {

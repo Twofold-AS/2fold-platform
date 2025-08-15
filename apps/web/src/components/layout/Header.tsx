@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
-import { Button, type ButtonProps } from "../ui/button";
+import { Button } from "../ui/button";
 import {
   Navbar as NavbarComponent,
   NavbarLeft,
@@ -21,7 +21,6 @@ interface NavbarLink {
 interface NavbarActionProps {
   text: string;
   href: string;
-  variant?: ButtonProps["variant"];
   icon?: ReactNode;
   iconRight?: ReactNode;
   isButton?: boolean;
@@ -51,7 +50,6 @@ export default function Navbar({
       text: "Get Started",
       href: "https://www.launchuicomponents.com/",
       isButton: true,
-      variant: "default",
     },
   ],
   showNavigation = true,
@@ -77,7 +75,6 @@ export default function Navbar({
               action.isButton ? (
                 <Button
                   key={index}
-                  variant={action.variant || "default"}
                   asChild
                 >
                   <a href={action.href}>

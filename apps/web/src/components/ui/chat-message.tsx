@@ -75,10 +75,10 @@ interface ToolCall {
 interface ToolResult {
   state: "result"
   toolName: string
-  result: {
-    __cancelled?: boolean
-    [key: string]: any
-  }
+result: {
+  __cancelled?: boolean
+  [key: string]: unknown
+}
 }
 
 type ToolInvocation = PartialToolCall | ToolCall | ToolResult
@@ -101,7 +101,7 @@ interface TextPart {
 // For compatibility with AI SDK types, not used
 interface SourcePart {
   type: "source"
-  source?: any
+  source?: unknown
 }
 
 interface FilePart {

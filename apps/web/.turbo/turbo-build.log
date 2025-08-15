@@ -1,29 +1,33 @@
- WARN  Unsupported engine: wanted: {"node":"20.x"} (current: {"node":"v22.18.0","pnpm":"9.12.0"})
 
-> web@ build C:\Users\Kjartan\Desktop\Twofold\Development\2fold-platform\apps\web
+> web@ build C:\Users\mikae\Documents\GitHub\2fold-platform\apps\web
 > next build
+
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
 
    ▲ Next.js 15.4.6
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 3.0s
+ ✓ Compiled successfully in 12.0s
    Linting and checking validity of types ...
 
-./src/app/(dashboard)/platform/page.tsx
-1:10  Warning: 'headers' is defined but never used.  @typescript-eslint/no-unused-vars
+./src/components/layout/Header_test.tsx
+6:8  Warning: 'AuthButtons' is defined but never used.  @typescript-eslint/no-unused-vars
 
 info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
-   Collecting page data ...
-Error: @prisma/client did not initialize yet. Please run "prisma generate" and try to import it again.
-    at 86116 (C:\Users\Kjartan\Desktop\Twofold\Development\2fold-platform\apps\web\.next\server\app\api\status\route.js:1:7747)
-    at c (C:\Users\Kjartan\Desktop\Twofold\Development\2fold-platform\apps\web\.next\server\webpack-runtime.js:1:128)
-    at 57375 (C:\Users\Kjartan\Desktop\Twofold\Development\2fold-platform\apps\web\.next\server\app\api\status\route.js:1:1587)
-    at c (C:\Users\Kjartan\Desktop\Twofold\Development\2fold-platform\apps\web\.next\server\webpack-runtime.js:1:128)
-    at <unknown> (C:\Users\Kjartan\Desktop\Twofold\Development\2fold-platform\apps\web\.next\server\app\api\status\route.js:1:7995)
-    at c.X (C:\Users\Kjartan\Desktop\Twofold\Development\2fold-platform\apps\web\.next\server\webpack-runtime.js:1:1206)
-    at <unknown> (C:\Users\Kjartan\Desktop\Twofold\Development\2fold-platform\apps\web\.next\server\app\api\status\route.js:1:7981)
-    at Object.<anonymous> (C:\Users\Kjartan\Desktop\Twofold\Development\2fold-platform\apps\web\.next\server\app\api\status\route.js:1:8027)
+Failed to compile.
 
-> Build error occurred
-[Error: Failed to collect page data for /api/status] { type: 'Error' }
+./src/components/layout/Header_test.tsx:55:39
+Type error: Property 'href' does not exist on type '{ title: string; description: string; items: { title: string; href: string; }[]; }'.
+
+[0m [90m 53 |[39m                         {navigationItems[33m.[39mmap((item) [33m=>[39m (
+ [90m 54 |[39m                             [33m<[39m[33mNavigationMenuItem[39m key[33m=[39m{item[33m.[39mtitle}[33m>[39m
+[31m[1m>[22m[39m[90m 55 |[39m                                 {item[33m.[39mhref [33m?[39m (
+ [90m    |[39m                                       [31m[1m^[22m[39m
+ [90m 56 |[39m                                     [33m<[39m[33mNavigationMenuLink[39m[33m>[39m
+ [90m 57 |[39m                                         [33m<[39m[33mButton[39m variant[33m=[39m[32m"ghost"[39m[33m>[39m{item[33m.[39mtitle}[33m<[39m[33m/[39m[33mButton[39m[33m>[39m
+ [90m 58 |[39m                                     [33m<[39m[33m/[39m[33mNavigationMenuLink[39m[33m>[39m[0m
+Next.js build worker exited with code: 1 and signal: null
  ELIFECYCLE  Command failed with exit code 1.

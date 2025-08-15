@@ -3,6 +3,7 @@ import { auth } from '@/server/auth';
 import ThemeToggle from '@/components/ThemeToggle';
 import AdaptiveLogo from '@/components/AdaptiveLogo';
 import MobileMenuClient from '@/components/MobileMenuClient';
+import AuthSection from "../auth/AuthSection";
 
 export default async function Header() {
   const session = await auth();
@@ -27,17 +28,7 @@ export default async function Header() {
             Support
           </Link>
           <ThemeToggle />
-          {session ? (
-            <form action="/api/auth/signout" method="post" className="inline">
-              <button type="submit" className="opacity-80 hover:opacity-100 transition-opacity">
-                Logg ut
-              </button>
-            </form>
-          ) : (
-            <Link href="/auth/signin" className="opacity-80 hover:opacity-100 transition-opacity">
-              Logg inn
-            </Link>
-          )}
+          <AuthSection/>
         </div>
 
         {/* Mobile menu - only visible on mobile/tablet */}

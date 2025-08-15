@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import FAQ from "@/components/sections/FAQ";
+import BentoGrid from "@/components/kokonut/sections/bento-grid";
 
 export default function HomePage() {
   return (
@@ -20,6 +21,8 @@ export default function HomePage() {
           </Button>
         </div>
       </section>
+
+      <section><BentoGrid/></section>
 
       <section>
         <h2 className="text-2xl font-semibold mb-4">Navigasjon</h2>

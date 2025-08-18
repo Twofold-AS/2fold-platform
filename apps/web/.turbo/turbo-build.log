@@ -5,12 +5,12 @@
    ▲ Next.js 15.4.6
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 3.0s
+ ✓ Compiled successfully in 6.0s
    Linting and checking validity of types ...
 
 ./src/components/kokonut/sections/bento-grid.tsx
-358:9  Warning: Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps').
-579:12  Warning: 'isHovered' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+347:9  Warning: Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps').
+568:12  Warning: 'isHovered' is assigned a value but never used.  @typescript-eslint/no-unused-vars
 
 ./src/components/ui/chat-message.tsx
 118:6  Warning: 'MessagePart' is defined but never used.  @typescript-eslint/no-unused-vars
@@ -26,26 +26,26 @@ info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/d
    Collecting build traces ...
 
 Route (app)                                 Size  First Load JS
-┌ ○ /                                    48.1 kB         164 kB
-├ ○ /_not-found                            994 B         101 kB
-├ ƒ /api-docs                              166 B         104 kB
-├ ƒ /api/auth/[...nextauth]                154 B         100 kB
-├ ƒ /api/github/webhook                    154 B         100 kB
-├ ƒ /api/health                            154 B         100 kB
-├ ƒ /api/openapi                           154 B         100 kB
-├ ƒ /api/openapi.json                      154 B         100 kB
-├ ƒ /api/status                            154 B         100 kB
-├ ƒ /api/trpc/[trpc]                       154 B         100 kB
-├ ƒ /api/upgrade                           154 B         100 kB
-├ ƒ /auth/signin                           166 B         104 kB
-├ ƒ /dashboard                             154 B         100 kB
-├ ○ /docs                                  166 B         104 kB
-├ ○ /docs/readme                           154 B         100 kB
-└ ƒ /platform                              154 B         100 kB
-+ First Load JS shared by all             100 kB
-  ├ chunks/718-804a454cb750526a.js       44.2 kB
-  ├ chunks/e0d0bbef-6a86fc0da747ec17.js  54.1 kB
-  └ other shared chunks (total)          1.94 kB
+┌ ○ /                                     122 kB         243 kB
+├ ○ /_not-found                            997 B         105 kB
+├ ƒ /api-docs                              173 B         108 kB
+├ ƒ /api/auth/[...nextauth]                165 B         104 kB
+├ ƒ /api/github/webhook                    165 B         104 kB
+├ ƒ /api/health                            165 B         104 kB
+├ ƒ /api/openapi                           165 B         104 kB
+├ ƒ /api/openapi.json                      165 B         104 kB
+├ ƒ /api/status                            165 B         104 kB
+├ ƒ /api/trpc/[trpc]                       165 B         104 kB
+├ ƒ /api/upgrade                           165 B         104 kB
+├ ƒ /auth/signin                           173 B         108 kB
+├ ƒ /dashboard                             165 B         104 kB
+├ ○ /docs                                  173 B         108 kB
+├ ○ /docs/readme                           165 B         104 kB
+└ ƒ /platform                              165 B         104 kB
++ First Load JS shared by all             104 kB
+  ├ chunks/5718-6a58e8ed15e5747d.js      44.2 kB
+  ├ chunks/e0d0bbef-3b0d673f7692dd36.js  54.1 kB
+  └ other shared chunks (total)          5.96 kB
 
 
 ○  (Static)   prerendered as static content

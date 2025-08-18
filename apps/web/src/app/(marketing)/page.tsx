@@ -1,12 +1,25 @@
+'use client';
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import FAQ from "@/components/sections/FAQ";
 import BentoGrid from "@/components/kokonut/sections/bento-grid";
 import AIChat from "@/components/sections/AIChat";
+import { useState, useEffect } from 'react';
+import LoadingWrapper from '@/components/LoadingWrapper';
 
 export default function HomePage() {
+
+  const [showLoader, setShowLoader] = useState(true);
+
+  useEffect(() => {
+    // Respektér “reduce motion”
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (mq.matches) setShowLoader(false);
+  }, []);
+
   return (
+    <LoadingWrapper>
     <div className="space-y-8">
       <section className="text-center py-12">
         <h1 className="text-4xl font-bold mb-4">The Fold</h1>
@@ -129,5 +142,6 @@ export default function HomePage() {
       {/* FAQ Section */}
       <FAQ />
     </div>
+    </LoadingWrapper>
   );
 }

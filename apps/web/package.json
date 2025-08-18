@@ -34,6 +34,7 @@
     "framer-motion": "^11.18.2",
     "gsap": "^3.13.0",
     "launchdarkly-react-client-sdk": "^3.2.3",
+    "lenis": "^1.3.8",
     "lucide-react": "^0.468.0",
     "marked": "^12.0.2",
     "next": "15.4.6",

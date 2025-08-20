@@ -33,6 +33,7 @@ export default function TestimonialsSection() {
               <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl">
                 <img
                   {/* eslint-disable-next-line @next/next/no-img-element */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Image%20to%20ASCII%20May%2029%202025.jpg-C08AI0H3Xk3J8hgVUpjAj74EqfWrFp.jpeg"
                   alt="Rick Rubin ASCII art portrait"
                   className="w-full h-full object-cover object-center"

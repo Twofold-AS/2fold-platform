@@ -89,31 +89,11 @@ interface ReasoningPart {
   reasoning: string
 }
 
-interface ToolInvocationPart {
-  type: "tool-invocation"
-  toolInvocation: ToolInvocation
-}
 
-interface TextPart {
-  type: "text"
-  text: string
-}
 
 // For compatibility with AI SDK types, not used
-interface SourcePart {
-  type: "source"
-  source?: unknown
-}
 
-interface FilePart {
-  type: "file"
-  mimeType: string
-  data: string
-}
 
-interface StepStartPart {
-  type: "step-start"
-}
 
 
 export interface Message {

@@ -425,6 +425,7 @@ export default function VibeCodingTweetsSection({ onOpenInstall: _ }: VibeCoding
                             <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden border border-white/30 bg-white/10">
                               <img
                               {/* eslint-disable-next-line @next/next/no-img-element */}
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
                                 src={tweet.profileImage || "/placeholder.svg"}
                                 alt={`${tweet.name} profile`}
                                 className="w-full h-full object-cover"

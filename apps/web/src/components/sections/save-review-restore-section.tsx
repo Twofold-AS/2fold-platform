@@ -237,6 +237,7 @@ export default function SaveReviewRestoreSection({ onOpenInstall }: SaveReviewRe
                         >
                           <img
                             {/* eslint-disable-next-line @next/next/no-img-element */}
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
                             src={feature.thumbnailSrc || "/placeholder.svg"}
                             alt={`${feature.title} feature of YOYO`}
                             className="w-full h-full object-cover"

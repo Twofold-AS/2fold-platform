@@ -23,7 +23,7 @@ const faqs = [
     question: "Is it free?",
     answer: (
       <>
-        Yes — there's a generous free tier.
+        Yes — there&apos;s a generous free tier.
         <br />
         <br />
         Pro and Team plans coming soon.
@@ -62,7 +62,7 @@ const faqs = [
         Your code is <strong>encrypted in transit using TLS 1.2+</strong> and never stored or used for training.
         <br />
         <br />
-        We don't keep logs. We don't keep copies.
+        We don&apos;t keep logs. We don&apos;t keep copies.
       </>
     ),
   },

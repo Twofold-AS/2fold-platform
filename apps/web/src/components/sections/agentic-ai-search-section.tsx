@@ -60,7 +60,6 @@ export default function AgenticAISearchSection({ onOpenInstall }: AgenticAISearc
   useEffect(() => {
     const preloadVideos = async () => {
       // Start with the first video (already active)
-      const initialLoaded = { [searchQueries[0].id]: true }
 
       // Then preload the rest in the background
       for (const query of searchQueries) {
@@ -194,7 +193,7 @@ export default function AgenticAISearchSection({ onOpenInstall }: AgenticAISearc
               {/* Mobile Navigation Dots - Only visible on mobile */}
               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 lg:hidden z-20">
                 <div className="flex gap-2 bg-black/50 backdrop-blur-sm rounded-full px-3 py-2">
-                  {searchQueries.map((query, _index) => (
+                  {searchQueries.map((query) => (
                     <button
                       key={query.id}
                       onClick={() => setActiveQuery(query)}

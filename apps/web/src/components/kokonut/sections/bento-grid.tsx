@@ -564,7 +564,7 @@ function AIInput_Voice() {
 }
 
 const BentoCard = ({ item }: { item: BentoItem }) => {
-    const [_isHovered, setIsHovered] = useState(false);
+    const [, setIsHovered] = useState(false);
     const x = useMotionValue(0);
     const y = useMotionValue(0);
     const rotateX = useTransform(y, [-100, 100], [2, -2]);

@@ -44,7 +44,6 @@ const ImageFilePreview = React.forwardRef<HTMLDivElement, FilePreviewProps>(
           <img
             alt={`Attachment ${file.name}`}
             className="grid h-10 w-10 shrink-0 place-items-center rounded-sm border bg-muted object-cover"
-          {/* eslint-disable-next-line @next/next/no-img-element */}
             src={URL.createObjectURL(file)}
           />
           <span className="w-full truncate text-muted-foreground">

@@ -99,8 +99,10 @@ export default function Home() {
                     color: "#FFFFFF",
                     backgroundColor: "transparent",
                     // These styles ensure proper selection colors
-                    "--selection-text-color": "#FFFFFF",
-                    "--selection-background-color": "#000000",
+          ...({
+    "--selection-text-color": "#FFFFFF",
+    "--selection-background-color": "#000000",
+  } as React.CSSProperties),
                   }}
                 >
                   Undo AI mistakes instantly. Preview safely. Roll back with one click.
@@ -171,8 +173,10 @@ export default function Home() {
                   color: "#FFFFFF",
                   backgroundColor: "transparent",
                   // These styles ensure proper selection colors
-                  "--selection-text-color": "#FFFFFF",
-                  "--selection-background-color": "#000000",
+          ...({
+    "--selection-text-color": "#FFFFFF",
+    "--selection-background-color": "#000000",
+  } as React.CSSProperties),
                 }}
               >
                 Undo AI mistakes instantly — save progress and restore with one click.

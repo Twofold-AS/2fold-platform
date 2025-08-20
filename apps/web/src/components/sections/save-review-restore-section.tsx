@@ -51,6 +51,7 @@ interface SaveReviewRestoreSectionProps {
 export default function SaveReviewRestoreSection({ onOpenInstall }: SaveReviewRestoreSectionProps) {
   const [activeFeature, setActiveFeature] = useState(features[0])
   const [videosLoaded, setVideosLoaded] = useState<{ [key: string]: boolean }>({})
+  const [hoveredFeature, setHoveredFeature] = useState<string | null>(null)
 
   // Preload all videos when component mounts
   useEffect(() => {

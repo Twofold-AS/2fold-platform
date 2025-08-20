@@ -15,10 +15,11 @@
 1:2  Warning: Unused eslint-disable directive (no problems were reported from '@next/next/no-img-element').
 2:1  Warning: Expected an assignment or function call and instead saw an expression.  @typescript-eslint/no-unused-expressions
 4:20  Warning: 'useRef' is defined but never used.  @typescript-eslint/no-unused-vars
-86:6  Warning: React Hook useEffect has a missing dependency: 'videosLoaded'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
-159:43  Warning: 'index' is defined but never used.  @typescript-eslint/no-unused-vars
-224:45  Warning: 'index' is defined but never used.  @typescript-eslint/no-unused-vars
-239:27  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+54:10  Warning: 'hoveredFeature' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+87:6  Warning: React Hook useEffect has a missing dependency: 'videosLoaded'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+160:43  Warning: 'index' is defined but never used.  @typescript-eslint/no-unused-vars
+225:45  Warning: 'index' is defined but never used.  @typescript-eslint/no-unused-vars
+240:27  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
 
 ./src/components/sections/testimonials-section.tsx
 1:2  Warning: Unused eslint-disable directive (no problems were reported from '@next/next/no-img-element').
@@ -33,15 +34,32 @@
 427:31  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
 
 info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
-Failed to compile.
+   Collecting page data ...
+ ⚠ Using edge runtime on a page currently disables static generation for that page
+   Generating static pages (0/4) ...
+   Generating static pages (1/4) 
+   Generating static pages (2/4) 
+   Generating static pages (3/4) 
+ ✓ Generating static pages (4/4)
+   Finalizing page optimization ...
+   Collecting build traces ...
 
-./app/opengraph-image.tsx:1:8
-Type error: Import declaration conflicts with local declaration of 'Image'.
+Route (app)                                  Size  First Load JS
+┌ ○ /manifest.webmanifest                   131 B          99 kB
+├ ƒ /opengraph-image                        131 B          99 kB
+└ ○ /sitemap.xml                            131 B          99 kB
++ First Load JS shared by all             98.9 kB
+  ├ chunks/136-fddda9305ea009b5.js        42.9 kB
+  ├ chunks/e0d0bbef-6a86fc0da747ec17.js   54.1 kB
+  └ other shared chunks (total)           1.79 kB
 
-[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m
- [90m   |[39m        [31m[1m^[22m[39m
- [90m 2 |[39m [36mimport[39m { [33mImageResponse[39m } [36mfrom[39m [32m"next/og"[39m
- [90m 3 |[39m
- [90m 4 |[39m [36mexport[39m [36mconst[39m runtime [33m=[39m [32m"edge"[39m[0m
-Next.js build worker exited with code: 1 and signal: null
- ELIFECYCLE  Command failed with exit code 1.
+Route (pages)                                Size  First Load JS
+─ ○ /404                                  2.28 kB        80.2 kB
++ First Load JS shared by all               78 kB
+  ├ chunks/framework-e73c758a3a2a6aae.js  44.8 kB
+  ├ chunks/main-cadff36cca4808bd.js         31 kB
+  └ other shared chunks (total)           2.17 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

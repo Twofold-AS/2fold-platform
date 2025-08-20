@@ -5,12 +5,17 @@ import TwofoldLoader from './TwofoldLoader';
 interface LoadingWrapperProps {
   children: React.ReactNode;
   showLoader?: boolean;
+  showSkip?: boolean;
 }
 
-export default function LoadingWrapper({ children, showLoader = true }: LoadingWrapperProps) {
+export default function LoadingWrapper({ 
+  children, 
+  showLoader = true, 
+  showSkip = false 
+}: LoadingWrapperProps) {
   const [isLoading, setIsLoading] = useState(showLoader);
 
-  // Hvis du vil disable loading i development
+  // Disable loading in development if needed
   useEffect(() => {
     if (process.env.NODE_ENV === 'development' && !showLoader) {
       setIsLoading(false);
@@ -21,7 +26,8 @@ export default function LoadingWrapper({ children, showLoader = true }: LoadingW
     return (
       <TwofoldLoader
         onDone={() => setIsLoading(false)}
-        minTime={2500} // 2.5 sekunder
+        minTime={2500}
+        showSkip={showSkip}
       />
     );
   }

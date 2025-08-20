@@ -151,7 +151,7 @@ export default function FAQSection({ onOpenInstall }: FAQSectionProps) {
               lineHeight: "1.5",
             }}
           >
-            Still unsure? Try it for 60 seconds — you'll never code AI-assisted without it again.
+            Still unsure? Try it for 60 seconds — you&apos;ll never code AI-assisted without it again.
           </p>
 
           {onOpenInstall && (

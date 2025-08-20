@@ -115,13 +115,6 @@ interface StepStartPart {
   type: "step-start"
 }
 
-type MessagePart =
-  | TextPart
-  | ReasoningPart
-  | ToolInvocationPart
-  | SourcePart
-  | FilePart
-  | StepStartPart
 
 export interface Message {
   id: string

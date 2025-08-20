@@ -16,14 +16,14 @@ interface SearchQuery {
 const searchQueries: SearchQuery[] = [
   {
     id: "favorites",
-    question: "Show my edits to favorites",
+    question: &quot;Show my edits to favorites&quot;,
     videoSrc: "/videos/favorites.mp4",
     fallbackSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/favorites-FFCUeeEFzfxDBIhgGACi7YGpYQZbnU.mp4",
     category: "Feature",
   },
   {
     id: "windsurf",
-    question: "Did we update anything using Windsurf?",
+    question: &quot;Did we update anything using Windsurf?&quot;,
     videoSrc: "/videos/update-windsurf.mp4",
     fallbackSrc:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/update-windsurf-2nLOc5uJICad4940kOGQdrwE4nsXdo.mp4",
@@ -31,7 +31,7 @@ const searchQueries: SearchQuery[] = [
   },
   {
     id: "darkmode",
-    question: "Show me my dark mode refactor?",
+    question: &quot;Show me my dark mode refactor?&quot;,
     videoSrc: "/videos/dark-mode-search.mp4",
     fallbackSrc:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dark-mode-search-mSz6mUD1V8RUdjEfezII84ljPxeCyT.mp4",
@@ -39,7 +39,7 @@ const searchQueries: SearchQuery[] = [
   },
   {
     id: "v9",
-    question: "What did I do in v9?",
+    question: &quot;What did I do in v9?&quot;,
     videoSrc: "/videos/did-v9.mp4",
     fallbackSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/did-v9-sNyHkh5hs5gfnDH0tYkH15uK5syHUX.mp4",
     category: "Version",
@@ -53,7 +53,6 @@ interface AgenticAISearchSectionProps {
 export default function AgenticAISearchSection({ onOpenInstall }: AgenticAISearchSectionProps) {
   const [activeQuery, setActiveQuery] = useState(searchQueries[0])
   const [hoveredQuery, setHoveredQuery] = useState<string | null>(null)
-  const [videosLoaded, setVideosLoaded] = useState<{ [key: string]: boolean }>({})
   const videoCache = useRef<{ [key: string]: HTMLVideoElement }>({})
   const [isHovering, setIsHovering] = useState(false)
 

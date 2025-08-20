@@ -59,7 +59,7 @@ const tweets: Tweet[] = [
   },
   // Third - Kitze (369.5K views)
   {
-    text: "they should invent a tool where vibe code can be stored in the cloud so from time to time you do a 'checkin' of your code and you can always revert to it and go to a previous version\n\nlike a ... hub for code",
+    text: "they should invent a tool where vibe code can be stored in the cloud so from time to time you do a &apos;checkin&apos; of your code and you can always revert to it and go to a previous version\n\nlike a ... hub for code",
     handle: "@thekitze",
     name: "Kitze",
     url: "https://t.co/IPd6mRr7qI",
@@ -126,7 +126,7 @@ interface VibeCodingTweetsSectionProps {
   onOpenInstall?: () => void
 }
 
-export default function VibeCodingTweetsSection({ onOpenInstall }: VibeCodingTweetsSectionProps) {
+export default function VibeCodingTweetsSection({ onOpenInstall: _ }: VibeCodingTweetsSectionProps) {
   const [expandedTweets, setExpandedTweets] = useState<Set<number>>(new Set())
 
   const toggleExpanded = (index: number, e: React.MouseEvent) => {
@@ -424,6 +424,7 @@ export default function VibeCodingTweetsSection({ onOpenInstall }: VibeCodingTwe
                           <div className="flex items-center gap-3 w-full sm:w-auto">
                             <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden border border-white/30 bg-white/10">
                               <img
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
                                 src={tweet.profileImage || "/placeholder.svg"}
                                 alt={`${tweet.name} profile`}
                                 className="w-full h-full object-cover"

@@ -32,6 +32,7 @@ export default function TestimonialsSection() {
             <div className="flex-shrink-0">
               <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl">
                 <img
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Image%20to%20ASCII%20May%2029%202025.jpg-C08AI0H3Xk3J8hgVUpjAj74EqfWrFp.jpeg"
                   alt="Rick Rubin ASCII art portrait"
                   className="w-full h-full object-cover object-center"
@@ -49,11 +50,11 @@ export default function TestimonialsSection() {
                     letterSpacing: "-0.02em",
                   }}
                 >
-                  "Vibe Coding is the{" "}
+                  &quot;Vibe Coding is the{" "}
                   <span className="bg-gradient-to-r from-cyan-400 via-orange-400 to-pink-400 bg-clip-text text-transparent">
                     Punk Rock
                   </span>{" "}
-                  of Software"
+                  of Software&quot;
                 </p>
               </blockquote>
 

@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { ImageResponse } from "next/og"
 
 export const runtime = "edge"
@@ -14,7 +15,7 @@ export const contentType = "image/png"
 export default function Image() {
   return new ImageResponse(
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%", height: "100%" }}>
-      <img
+      <Image
         src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/og.jpg-NkiwpAQfj6Pha1ranA4yjJXERgJtw3.jpeg"
         alt="AI Version Control"
         style={{ width: "100%", height: "100%", objectFit: "cover" }}

@@ -49,9 +49,7 @@ interface SaveReviewRestoreSectionProps {
 
 export default function SaveReviewRestoreSection({ onOpenInstall }: SaveReviewRestoreSectionProps) {
   const [activeFeature, setActiveFeature] = useState(features[0])
-  const [hoveredFeature, setHoveredFeature] = useState<string | null>(null)
   const [videosLoaded, setVideosLoaded] = useState<{ [key: string]: boolean }>({})
-  const videoRefs = useRef<{ [key: string]: HTMLVideoElement | null }>({})
 
   // Preload all videos when component mounts
   useEffect(() => {
@@ -238,6 +236,7 @@ export default function SaveReviewRestoreSection({ onOpenInstall }: SaveReviewRe
                           }`}
                         >
                           <img
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
                             src={feature.thumbnailSrc || "/placeholder.svg"}
                             alt={`${feature.title} feature of YOYO`}
                             className="w-full h-full object-cover"
